@@ -1,0 +1,47 @@
+
+xsh $ AT S7=45 S0=0 L1 V1 X4 &c1 E1 Q0
+Syntax error
+xsh $ Booting Xinu on i386-pc...
+
+(x86 Xinu) #28 (root@develop-end) Mon May 8 22:26:19 EDT 2023
+
+  16777216 bytes physical memory.
+           [0x00000000 to 0x00FFFFFF]
+     25881 bytes of Xinu code.
+           [0x00000000 to 0x00006518]
+     17779 bytes of data.
+           [0x00006519 to 0x0000AA8B]
+    611696 bytes of heap space below 640K.
+  15728640 bytes of heap space above 1M.
+           [0x00100000 to 0x00FFFFFF]
+
+
+------------------------------------------
+   __    __   _____    _   _    _    _    
+   \ \  / /  |__ __|  | \ | |  | |  | |   
+    \ \/ /     | |    |  \| |  | |  | |   
+    / /\ \    _| |_   | \   |  | |  | |   
+   / /  \ \  |     |  | | \ |  \  --  /   
+   --    --   -----    -   -     ----     
+------------------------------------------
+
+
+Welcome to Xinu!
+
+
+xsh $ help
+
+shell commands are:
+
+argecho      devdump      help         memstat      create       
+cat          echo         kill         ps           ?            
+clear        exit         memdump      sleep        
+xsh $ ps  create
+xsh $ creat     s ps
+Pid Name             State Prio Ppid Stack Base Stack Ptr  Stack Size
+--- ---------------- ----- ---- ---- ---------- ---------- ----------
+  0 prnull           ready    0    0 0x00FFBFFC 0x00FFFF04      16384
+  1 Main process     recv    20    0 0x00FF7FFC 0x00FF7F14      65536
+  2 shell            recv    50    1 0x00FE7FFC 0x00FE7C8C       8192
+  6 ps               curr    20    2 0x00FE5FFC 0x00FE5FC4       8192
+xsh $ 

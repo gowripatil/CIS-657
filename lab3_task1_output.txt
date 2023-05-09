@@ -1,0 +1,64 @@
+Booting Xinu on i386-pc...
+
+(x86 Xinu) #27 (root@develop-end) Mon May 8 22:14:48 EDT 2023
+
+  16777216 bytes physical memory.
+           [0x00000000 to 0x00FFFFFF]
+     25881 bytes of Xinu code.
+           [0x00000000 to 0x00006518]
+     17779 bytes of data.
+           [0x00006519 to 0x0000AA8B]
+    611696 bytes of heap space below 640K.
+  15728640 bytes of heap space above 1M.
+           [0x00100000 to 0x00FFFFFF]
+
+
+------------------------------------------
+   __    __   _____    _   _    _    _    
+   \ \  / /  |__ __|  | \ | |  | |  | |   
+    \ \/ /     | |    |  \| |  | |  | |   
+    / /\ \    _| |_   | \   |  | |  | |   
+   / /  \ \  |     |  | | \ |  \  --  /   
+   --    --   -----    -   -     ----     
+------------------------------------------
+
+
+Welcome to Xinu!
+
+
+xsh $ xi  help
+
+shell commands are:
+
+argecho      devdump      help         memstat      create       
+cat          echo         kill         ps           ?            
+clear        exit         memdump      sleep        
+xsh $ ps
+Pid Name             State Prio Ppid Stack Base Stack Ptr  Stack Size
+--- ---------------- ----- ---- ---- ---------- ---------- ----------
+  0 prnull           ready    0    0 0x00FFBFFC 0x00FFFF04      16384
+  1 Main process     recv    20    0 0x00FF7FFC 0x00FF7F14      65536
+  2 shell            recv    50    1 0x00FE7FFC 0x00FE7C8C       8192
+  4 ps               curr    20    2 0x00FE5FFC 0x00FE5FC4       8192
+xsh $ create  
+xsh $ ps
+Pid Name             State Prio Ppid Stack Base Stack Ptr  Stack Size
+--- ---------------- ----- ---- ---- ---------- ---------- ----------
+  0 prnull           ready    0    0 0x00FFBFFC 0x00FFFF04      16384
+  1 Main process     recv    20    0 0x00FF7FFC 0x00FF7F14      65536
+  2 shell            recv    50    1 0x00FE7FFC 0x00FE7C8C       8192
+  6 Test             ready   20    5 0x00FE3FFC 0x00FE3F6C       1024
+  7 ps               curr    20    2 0x00FE5FFC 0x00FE5D84       8192
+xsh $ create 20  10
+xsh $ ps
+Pid Name             State Prio Ppid Stack Base Stack Ptr  Stack Size
+--- ---------------- ----- ---- ---- ---------- ---------- ----------
+  0 prnull           ready    0    0 0x00FFBFFC 0x00FFFF04      16384
+  1 Main process     recv    20    0 0x00FF7FFC 0x00FF7F14      65536
+  2 shell            recv    50    1 0x00FE7FFC 0x00FE7C8C       8192
+  6 Test             ready   20    5 0x00FE3FFC 0x00FE3F6C       1024
+  9 Test             ready   10    8 0x00FE3BFC 0x00FE3BCC       1024
+ 10 ps               curr    20    2 0x00FE5FFC 0x00FE5D84       8192
+xsh $ create 3 21
+Loo   Has higher priority than main so ^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D                                                                                 New Process has higher priority than main so mai   main     i  it is running in infine   te loop l blocking main   li ocking    
+blocking main. Main process nes ver gets
